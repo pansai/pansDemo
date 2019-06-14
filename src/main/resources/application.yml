@@ -1,0 +1,40 @@
+# servce
+server:
+  port: 8888
+  tomcat:
+    uri-encoding: utf-8
+
+# datasou
+spring:
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML
+    encoding: UTF-8
+    cache: false
+    http:
+      encoding:
+        charset: UTF-8
+        enabled: true
+        force: true
+    messages:
+      encoding: UTF-8
+  resources:
+    static-locations: classpath:/static,classpath:/public,classpath:/resources,classpath:/META-INF/resources,servlet context:/
+  datasource:
+    driverClassName: net.sf.log4jdbc.DriverSpy
+    url: jdbc:log4jdbc:mysql://101.132.174.150:3306/pansdemo?autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=utf-8&amp;zeroDateTimeBehavior=convertToNull
+    username: dms
+    password: PanSai123.
+    filters: stat
+    maxActive: 30
+    initialSize: 5
+    maxWait: 60000
+    minIdle: 5
+    maxIdle: 20
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 1200000
+  mvc:
+  static-path-pattern: /resources/**
+
+
